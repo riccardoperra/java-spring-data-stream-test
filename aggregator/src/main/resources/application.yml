@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    function:
+      definition: todoAggregator
+    stream:
+      bindings:
+        todoAggregator-in-0:
+          destination: reader_out
+        todoAggregator-out-0:
+          destination: aggregator_out
+  data:
+    mongodb:
+      uri: "mongodb://localhost:27017/spring-stream"
+
+server:
+  port: 10003

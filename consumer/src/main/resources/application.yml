@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    function:
+      definition: todoReaderConsumer
+    stream:
+      bindings:
+        todoReaderConsumer-in-0:
+          destination: aggregator_out
+          group: notificationConsumer
+  data:
+    mongodb:
+      uri: "mongodb://localhost:27017/spring-stream"
+
+server:
+  port: 10001

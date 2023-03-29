@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    function:
+      definition: todoReaderProducer
+    stream:
+      bindings:
+        todoReaderProducer-out-0:
+          destination: reader_out
+  data:
+    mongodb:
+      uri: "mongodb://localhost:27017/spring-stream"
+
+server:
+  port: 10000
